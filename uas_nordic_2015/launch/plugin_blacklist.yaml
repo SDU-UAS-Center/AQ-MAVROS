@@ -1,0 +1,9 @@
+plugin_blacklist:
+- '3dr_radio'
+- 'px4flow'
+- 'image_pub'
+- 'setpoint_attitude'
+- 'setpoint_velocity'
+- 'actuator_control'
+- 'vision_pose_estimate'
+- 'vision_speed_estimate'

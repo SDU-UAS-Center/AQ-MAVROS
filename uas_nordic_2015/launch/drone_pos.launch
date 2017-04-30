@@ -1,0 +1,23 @@
+<!-- launch file -->
+
+<launch>
+	<node pkg="rosbag" name="rosbag_record" type="record" args="-a"/>
+
+	<node pkg="mavros" type="mavros_node" name="mavros" required="true" clear_params="true" output="screen">
+		<!--param name="fcu_url" value="/dev/ttyACM0:57600" /-->
+		<!--param name="fcu_url" value="/dev/rfcomm0:115200" /-->
+		<param name="fcu_url" value="/dev/ttyUSB2:57600" />
+		<param name="gcs_url" value="" />
+		<param name="target_system_id" value="1" />
+		<param name="target_component_id" value="1" />
+		<!-- load blacklist, config -->
+		<!--rosparam command="load" file="$(arg pluginlists_yaml)" /-->
+		<!--rosparam command="load" file="$(arg config_yaml)" /-->
+	</node>
+
+	<node pkg="uas_nordic_2015" name="drone_pos" type="drone_pos_node.py" output="screen">
+		<param name="drone_gps_sub" value="/mavros/gps/fix" />
+		<param name="drone_pos_pub" value="/drone/pos" />
+	</node>
+</launch>
+

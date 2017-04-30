@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package>
+  <name>uas_nordic_2015</name>
+  <version>0.0.0</version>
+  <description>The uas_nordic_2015 package</description>
+  <maintainer email="kjen@mmmi.sdu.dk">Kjeld Jensen</maintainer>
+  <license>Closed</license>
+  <url type="website"></url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>msgs</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <run_depend>msgs</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>rospy</run_depend>
+</package>

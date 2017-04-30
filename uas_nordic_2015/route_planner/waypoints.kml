@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>Polygon planner</name>
+<description></description>
+<Style id="red">
+  <LineStyle>
+    <color>ff0000ff</color>
+    <width>0.1</width>
+  </LineStyle>
+</Style>
+<Style id="green">
+  <LineStyle>
+    <color>ff00ff00</color>
+    <width>0.1</width>
+  </LineStyle>
+</Style>
+<Style id="blue">
+  <LineStyle>
+    <color>ffff0000</color>
+    <width>0.1</width>
+  </LineStyle>
+</Style>
+<Style id="cyan">
+  <LineStyle>
+    <color>ffffff00</color>
+    <width>0.1</width>
+  </LineStyle>
+</Style>
+<Style id="yellow">
+  <LineStyle>
+    <color>ff00ffff</color>
+    <width>0.1</width>
+  </LineStyle>
+</Style>
+<Style id="grey">
+  <LineStyle>
+    <color>ff888888</color>
+    <width>0.1</width>
+  </LineStyle>
+</Style>
+<Placemark>
+<name></name>
+<description></description>
+<styleUrl>#red</styleUrl>
+<LineString>
+<altitudeMode>relativeToGround</altitudeMode>
+<coordinates>
+08.3704000000,056.0600644400,40.000
+08.3695987156,056.0600357295,40.000
+08.3700437972,056.0596618324,40.000
+</coordinates>
+</LineString>
+</Placemark>
+</Document>
+</kml>

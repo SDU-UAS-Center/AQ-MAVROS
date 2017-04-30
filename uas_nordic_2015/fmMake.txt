@@ -1,0 +1,5 @@
+/autoquad_ros
+/uas_nordic_2015
+/weibel_tracker
+/frobomind/fmLib/hmi_support/keyboard_interface
+

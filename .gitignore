@@ -1,0 +1,20 @@
+# all files ending with a tilde
+*~
+
+# all files ending with
+*.pyc
+*.bag
+
+.project
+.pydevproject
+.cproject
+.settings/*
+CATKIN_IGNORE
+CMakeFiles/*
+CMakeCache.txt
+Makefile
+catkin/*
+catkin_generated/*
+cmake_install.cmake
+devel/*
+gtest/*
