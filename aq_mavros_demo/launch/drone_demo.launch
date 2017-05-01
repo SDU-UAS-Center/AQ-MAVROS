@@ -1,0 +1,49 @@
+<!-- launch file -->
+
+<launch>
+	<!-- node pkg="rosbag" name="rosbag_record" type="record" args="-a"/ -->
+
+	<node pkg="mavros" type="mavros_node" name="mavros" respawn="true" clear_params="true">
+		<param name="fcu_url" value="/dev/ttyACM0:115200" />
+		<!-- param name="fcu_url" value="/dev/rfcomm0:115200" /-->
+		<!-- param name="fcu_url" value="/dev/ttyUSB0:57600" /-->
+		<param name="gcs_url" value="" />
+		<param name="target_system_id" value="1" />
+		<param name="target_component_id" value="1" />
+		<!-- load blacklist, config -->
+		<rosparam command="load" file="$(find aq_mavros_demo)/launch/plugin_blacklist.yaml" />
+		<!--rosparam command="load" file="$(arg config_yaml)" /-->
+	</node>
+
+	<node pkg="aq_mavros" type="aq_mavros_node" name="aq_mavros_node" respawn="true">
+		<param name="drone_position_hz" value = "5" />
+		<param name="drone_fused_position_pub" value ="/drone/pose_fused" />
+		<param name="drone_gps_position_pub" value ="/drone/pose_gps" />
+		<param name="drone_waypoint_sub" value ="/drone/waypoint" />
+		<param name="drone_waypoint_reached_pub" value ="/drone/waypoint_reached" />
+		<param name="drone_waypoint_ack_pub" value = "/drone/waypoint_ack" />
+		<param name="drone_flight_status_pub" value = "/drone/get_flight_status" />
+		<param name="drone_flight_status_sub" value = "/drone/set_flight_status" />
+		<param name="drone_set_current_waypoint_sub" value ="/drone/set_current_waypoint" />
+		<param name="drone_clear_waypoints_sub" value ="/drone/clear_waypoints" />
+		<param name="mavlink_from_sub" value ="/mavlink/from" />
+		<param name="mavlink_to_pub" value ="/mavlink/to" />
+		<param name="show_debug" value = "false" />
+		<param name="drone_heartbeat_watchdog_secs" value = "2" />
+	</node>
+
+ 	<node pkg="aq_mavros_demo" type="keyboard_node" name="keyboard">
+	</node>
+
+	<node pkg="aq_mavros_demo" name="aq_mavros_demo" type="aq_mavros_demo_node.py" output="screen">
+		<param name="keyboard_sub" value="/keyboard" />
+		<param name="drone_gps_sub" value="/mavros/global_position/raw/fix" />
+		<param name="drone_battery_sub" value="/mavros/battery" />
+		<param name="drone_waypoint_pub" value ="/drone/waypoint" />
+		<param name="drone_waypoint_reached_sub" value ="/drone/waypoint_reached" />
+		<param name="tracker_sub" value="/weibel_track" />
+		<param name="drone_pos_pub" value="/drone/pos" />
+		<param name="distance_pub" value="/distance" />
+	</node>
+</launch>
+

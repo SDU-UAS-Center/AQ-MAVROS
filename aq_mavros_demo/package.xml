@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package>
+  <name>aq_mavros_demo</name>
+  <version>0.0.0</version>
+  <description>The aq_mavros_demo package</description>
+  <maintainer email="kjen@mmmi.sdu.dk">Kjeld Jensen</maintainer>
+  <license>BSD 3-Clause</license>
+  <url type="website"></url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>msgs</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <run_depend>msgs</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>rospy</run_depend>
+</package>
