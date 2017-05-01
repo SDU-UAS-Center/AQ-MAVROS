@@ -9,15 +9,23 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   message_generation
+  mavros_msgs
 )
 
 #SET(
 #  CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake
 #)
 
+#INCLUDE_DIRECTORIES(
+#  ${CMAKE_SOURCE_DIR}/autoquad_ros/include/mavlink/v1.0/
+#  ${CMAKE_SOURCE_DIR}/autoquad_ros/include/mavlink/v1.0/common/
+#)
+
 INCLUDE_DIRECTORIES(
-  ${CMAKE_SOURCE_DIR}/autoquad_ros/include/mavlink/v1.0/
-  ${CMAKE_SOURCE_DIR}/autoquad_ros/include/mavlink/v1.0/common/
+  ${CMAKE_SOURCE_DIR}/AQ-MAVROS/autoquad_interface/include/mavlink/v1.0/
+  ${CMAKE_SOURCE_DIR}/AQ-MAVROS/autoquad_interface/include/mavlink/v1.0/common/
+  #${CMAKE_SOURCE_DIR}/autoquad_interface/include/mavlink/v1.0/
+  #${CMAKE_SOURCE_DIR}/autoquad_interface/include/mavlink/v1.0/common/
 )
 
 
@@ -97,11 +105,11 @@ INCLUDE_DIRECTORIES(
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES mavlink
-#  CATKIN_DEPENDS roscpp rospy std_msgs
-#  DEPENDS system_lib
-#   message_runtime
+  INCLUDE_DIRS include
+  LIBRARIES mavlink
+  CATKIN_DEPENDS roscpp rospy std_msgs
+  DEPENDS system_lib
+   message_runtime
 )
 
 ###########
@@ -113,6 +121,7 @@ catkin_package(
 # include_directories(include)
 include_directories(
   ${catkin_INCLUDE_DIRS}
+  include
 #  ${GLIB2_MAIN_INCLUDE_DIR}
 #  ${GLIB2_INTERNAL_INCLUDE_DIR}
 )
